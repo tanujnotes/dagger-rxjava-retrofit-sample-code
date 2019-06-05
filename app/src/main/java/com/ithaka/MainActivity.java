@@ -13,6 +13,7 @@ import com.ithaka.models.CartModel;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 import javax.inject.Inject;
 
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     com.ithaka.NetworkService networkService;
 
     private View loadingView;
-    private TextView travellerCount;
+    private TextView travellerCount, payableAmount;
     private CartActivitiesAdapter cartActivitiesAdapter;
     private List<CartModel.ActivityTransaction> activityTransactions = new ArrayList<>();
 
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         loadingView = findViewById(R.id.loading_view);
+        payableAmount = findViewById(R.id.payable_amount);
         travellerCount = findViewById(R.id.traveller_count);
         cartActivitiesAdapter = new CartActivitiesAdapter(this, activityTransactions);
         RecyclerView activityRecyclerView = findViewById(R.id.activities_rv);
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onNext(CartModel model) {
                         loadingView.setVisibility(View.GONE);
+                        payableAmount.setText(String.format(Locale.getDefault(), "Total Payable Now: ₹ %.2f", model.getAmount()));
                         travellerCount.setText(String.format("%s Adults, %s Child", model.getAdults(), model.getChild()));
                         activityTransactions.clear();
                         activityTransactions.addAll(model.getActivityTransactions());

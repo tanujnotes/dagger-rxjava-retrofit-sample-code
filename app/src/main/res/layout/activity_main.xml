@@ -80,16 +80,34 @@
         android:gravity="center_vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/payable_amount"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
             android:text="@string/total_payable_now"
             android:textColor="@color/white" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="@drawable/white_round_square_backgorund"
+            android:text="@string/pay_now"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/imageview"
+            android:src="@drawable/ic_keyboard_arrow_down_black_24dp" />
+
     </LinearLayout>
 
     <include
         android:id="@+id/loading_view"
         layout="@layout/loading_layout"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
 </FrameLayout>

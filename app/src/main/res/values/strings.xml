@@ -11,4 +11,5 @@
     <string name="change">Change</string>
     <string name="inr">₹ INR</string>
     <string name="tap_to_retry">Tap to retry</string>
+    <string name="pay_now">pay now</string>
 </resources>
