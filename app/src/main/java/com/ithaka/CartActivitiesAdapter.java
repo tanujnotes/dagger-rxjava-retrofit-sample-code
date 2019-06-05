@@ -83,9 +83,9 @@ public class CartActivitiesAdapter extends RecyclerView.Adapter<CartActivitiesAd
                 .load(activityList.get(position).getImageUrl())
                 .centerCrop()
 //                .apply(RequestOptions.bitmapTransform(new RoundedCorners(8)))
-//                .placeholder(R.drawable.youplay_logo_placeholder)
-//                .error(R.drawable.youplay_logo_placeholder)
-//                .override(AppConstants.GLIDE_VIDEO_THUMBNAIL_WIDTH_LARGE, AppConstants.GLIDE_VIDEO_THUMBNAIL_HEIGHT_LARGE)
+                .placeholder(R.drawable.ithaka_logo)
+                .error(R.drawable.ithaka_logo)
+//                .override(100, 200)
                 .into(holder.activityImage);
     }
 

@@ -27,6 +27,7 @@
                     android:id="@+id/traveller_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
                     android:textColor="#3c2f4b" />
 
                 <TextView

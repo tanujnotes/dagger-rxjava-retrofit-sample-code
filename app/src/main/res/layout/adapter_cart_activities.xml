@@ -11,14 +11,15 @@
         android:id="@+id/city_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/violet_rounded_square_backgroud"
         android:paddingStart="16dp"
         android:paddingTop="8dp"
         android:paddingEnd="16dp"
         android:paddingBottom="8dp"
-        android:text="Bangkok"
         android:textAllCaps="true"
         android:textColor="@color/white" />
 
@@ -26,7 +27,10 @@
         android:id="@+id/activity_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
         android:padding="16dp"
         app:cardCornerRadius="4dp"
         app:cardElevation="2dp">
@@ -43,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="72dp"
                 android:text="7 Island Tour from Krabi by Speedboat with James Bond Island"
-                android:textColor="#3c2f4b" />
+                android:textColor="#3c2f4b"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/remove_activity"
@@ -87,7 +92,7 @@
                 android:layout_marginEnd="72dp"
                 android:text="Normal Ticket with transfer and dinner"
                 android:textColor="@color/colorPrimary"
-                android:textSize="16sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/adult_child_count_info"
@@ -95,6 +100,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/variant_title"
                 android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-light"
                 android:text="2 Adults (₹ 1900 each), 1 Child (₹ 900 each)"
                 android:textColor="#3c2f4b" />
 
@@ -105,7 +111,8 @@
                 android:layout_below="@+id/adult_child_count_info"
                 android:layout_marginTop="8dp"
                 android:drawableStart="@drawable/ic_date_16dp"
-                android:text="Feb 23, 2019 at 5:00 pm"
+                android:fontFamily="sans-serif-light"
+                android:text="Jun 23, 2019 at 5:00 pm"
                 android:textColor="#3c2f4b" />
 
             <ImageView
@@ -129,43 +136,35 @@
                 android:textColor="#3c2f4b"
                 android:textSize="12sp" />
 
-            <ListView
-                android:id="@+id/inclusion_list"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
                 android:layout_below="@+id/important_inclusions"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:layout_toEndOf="@+id/activity_image"
-                android:divider="@null"
-                android:dividerHeight="0dp"
-                android:scrollbars="none" />
+                android:foreground="@drawable/transparent_to_white_gradient_bottom"
+                android:orientation="horizontal">
 
-            <ListView
-                android:id="@+id/exclusion_list"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_below="@+id/inclusion_list"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="8dp"
-                android:layout_toEndOf="@+id/activity_image"
-                android:divider="@null"
-                android:dividerHeight="0dp"
-                android:scrollbars="none" />
+                <ListView
+                    android:id="@+id/inclusion_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:divider="@null"
+                    android:dividerHeight="0dp"
+                    android:scrollbars="none" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/important_inclusions"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="8dp"
-                android:layout_toEndOf="@+id/activity_image"
-                android:drawableStart="@drawable/ic_check_circle_black_24dp"
-                android:fontFamily="sans-serif-light"
-                android:text="Lunch"
-                android:textColor="#3c2f4b"
-                android:textSize="12sp"
-                android:visibility="gone" />
+                <ListView
+                    android:id="@+id/exclusion_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:divider="@null"
+                    android:dividerHeight="0dp"
+                    android:scrollbars="none" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/read_more"
