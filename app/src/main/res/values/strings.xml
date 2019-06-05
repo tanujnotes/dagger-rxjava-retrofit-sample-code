@@ -3,4 +3,7 @@
     <string name="loading">Loading…</string>
     <string name="success">Success!</string>
     <string name="error">Error!</string>
+    <string name="total_payable_now">Total Payable Now</string>
+    <string name="imageview">ImageView</string>
+    <string name="read_more">Read More</string>
 </resources>

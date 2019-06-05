@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/city_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bangkok"
+        android:textAllCaps="true" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/activity_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="16dp"
+        app:cardElevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/activity_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="72dp"
+                android:text="7 Island Tour from Krabi by Speedboat with James Bond Island"
+                android:textColor="#3c2f4b" />
+
+            <TextView
+                android:id="@+id/remove_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Remove" />
+
+            <View
+                android:id="@+id/card_divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/activity_description"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/brown_gray" />
+
+            <TextView
+                android:id="@+id/change_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_divider"
+                android:layout_alignParentEnd="true"
+                android:text="Change" />
+
+            <TextView
+                android:id="@+id/activity_color_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_divider"
+                android:layout_marginEnd="72dp"
+                android:text="Normal Ticket with transfer and dinner"
+                android:textColor="@color/colorPrimary" />
+
+            <TextView
+                android:id="@+id/adult_child_count_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/activity_color_text"
+                android:layout_marginTop="8dp"
+                android:text="2 Adults (₹ 1900 each), 1 Child (₹ 900 each)"
+                android:textColor="#3c2f4b" />
+
+            <TextView
+                android:id="@+id/date_and_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adult_child_count_info"
+                android:layout_marginTop="8dp"
+                android:text="[icon]Feb 23, 2019 at 5:00 pm"
+                android:textColor="#3c2f4b" />
+
+            <ImageView
+                android:id="@+id/activity_image"
+                android:layout_width="80dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/date_and_time"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/imageview"
+                android:src="@color/dark_gray" />
+
+            <TextView
+                android:id="@+id/important_inclusions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date_and_time"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@+id/activity_image"
+                android:letterSpacing="0.01"
+                android:text="Important Inclusions and Exclusions : "
+                android:textColor="#3c2f4b" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/important_inclusions"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@+id/activity_image"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="2sp"
+                android:text="[icon] Lunch"
+                android:textColor="#3c2f4b" />
+
+            <TextView
+                android:id="@+id/read_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/card_divider_2"
+                android:layout_alignParentEnd="true"
+                android:text="@string/read_more"
+                android:textColor="@color/colorPrimary" />
+
+            <View
+                android:id="@+id/card_divider_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/activity_image"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/brown_gray" />
+
+            <TextView
+                android:id="@+id/cancellation_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_divider_2"
+                android:text="Free Cancellation till 21st Feb, 23:59 IST"
+                android:textColor="#3c2f4b" />
+
+
+            <TextView
+                android:id="@+id/activity_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_divider_2"
+                android:layout_alignParentEnd="true"
+                android:text="Rs. 9798"
+                android:textColor="#68c948" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>
