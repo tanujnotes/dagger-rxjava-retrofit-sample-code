@@ -5,8 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.TextView;
 
 import com.ithaka.models.CartModel;
 
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     com.ithaka.NetworkService networkService;
 
-    private RecyclerView activityRecyclerView;
+    private TextView travellerCount;
     private CartActivitiesAdapter cartActivitiesAdapter;
     private List<CartModel.ActivityTransaction> activityTransactions = new ArrayList<>();
 
@@ -36,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
         ((MyApp) getApplication()).getNetComponent().inject(this);
         setContentView(R.layout.activity_main);
 
+        travellerCount = findViewById(R.id.traveller_count);
         cartActivitiesAdapter = new CartActivitiesAdapter(this, activityTransactions);
-        activityRecyclerView = findViewById(R.id.activities_rv);
+        RecyclerView activityRecyclerView = findViewById(R.id.activities_rv);
+        activityRecyclerView.setNestedScrollingEnabled(false);
         activityRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         activityRecyclerView.setAdapter(cartActivitiesAdapter);
 
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onNext(CartModel model) {
+                        travellerCount.setText(String.format("%s Adults, %s Child", model.getAdults(), model.getChild()));
                         activityTransactions.clear();
                         activityTransactions.addAll(model.getActivityTransactions());
                         cartActivitiesAdapter.notifyDataSetChanged();
