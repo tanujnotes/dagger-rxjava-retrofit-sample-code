@@ -136,10 +136,10 @@
                 android:layout_below="@+id/important_inclusions"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
-                android:scrollbars="none"
                 android:layout_toEndOf="@+id/activity_image"
                 android:divider="@null"
-                android:dividerHeight="0dp" />
+                android:dividerHeight="0dp"
+                android:scrollbars="none" />
 
             <ListView
                 android:id="@+id/exclusion_list"
@@ -148,10 +148,10 @@
                 android:layout_below="@+id/inclusion_list"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
-                android:scrollbars="none"
                 android:layout_toEndOf="@+id/activity_image"
                 android:divider="@null"
-                android:dividerHeight="0dp" />
+                android:dividerHeight="0dp"
+                android:scrollbars="none" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -185,23 +185,26 @@
                 android:layout_marginBottom="16dp"
                 android:background="@color/brown_gray" />
 
-            <TextView
-                android:id="@+id/cancellation_details"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/card_divider_2"
-                android:text="Free Cancellation till 21st Feb, 23:59 IST"
-                android:textColor="#3c2f4b" />
+                android:orientation="horizontal">
 
+                <TextView
+                    android:id="@+id/cancellation_details"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:textColor="#3c2f4b" />
 
-            <TextView
-                android:id="@+id/activity_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/card_divider_2"
-                android:layout_alignParentEnd="true"
-                android:text="Rs. 9798"
-                android:textColor="#68c948" />
+                <TextView
+                    android:id="@+id/activity_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/green" />
+            </LinearLayout>
 
         </RelativeLayout>
 

@@ -46,6 +46,7 @@ public class CartActivitiesAdapter extends RecyclerView.Adapter<CartActivitiesAd
         holder.cityName.setText(activityList.get(position).getCity());
         holder.variantTitle.setText(activityList.get(position).getVariantTitle());
         holder.timing.setText(String.format("%s at %s", activityList.get(position).getDate(), activityList.get(position).getStartTime()));
+        holder.activityAmount.setText(String.format(Locale.getDefault(), "₹ %.2f", activityList.get(position).getAmount()));
 
         List<String> inclusionList = activityList.get(holder.getAdapterPosition()).getInclusions();
         ArrayAdapter inclusionAdapter = new ArrayAdapter<>(activity, R.layout.check_listview, inclusionList);
@@ -75,7 +76,7 @@ public class CartActivitiesAdapter extends RecyclerView.Adapter<CartActivitiesAd
                 e.printStackTrace();
             }
         } else {
-            holder.cancellationDetails.setText("Non refundable");
+            holder.cancellationDetails.setText(activity.getString(R.string.non_refundable));
         }
 
         Glide.with(activity)
@@ -96,8 +97,8 @@ public class CartActivitiesAdapter extends RecyclerView.Adapter<CartActivitiesAd
     public class ItemViewHolder extends RecyclerView.ViewHolder {
 
         ImageView activityImage;
-        TextView activityDescription, cityName, variantTitle, timing, cancellationDetails;
         ListView inclusionList, exclusionList;
+        TextView activityDescription, cityName, variantTitle, timing, cancellationDetails, activityAmount;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
@@ -109,6 +110,7 @@ public class CartActivitiesAdapter extends RecyclerView.Adapter<CartActivitiesAd
             inclusionList = itemView.findViewById(R.id.inclusion_list);
             exclusionList = itemView.findViewById(R.id.exclusion_list);
             cancellationDetails = itemView.findViewById(R.id.cancellation_details);
+            activityAmount = itemView.findViewById(R.id.activity_amount);
         }
     }
 }

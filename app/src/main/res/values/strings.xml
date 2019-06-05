@@ -12,4 +12,5 @@
     <string name="inr">₹ INR</string>
     <string name="tap_to_retry">Tap to retry</string>
     <string name="pay_now">pay now</string>
+    <string name="non_refundable">Non refundable</string>
 </resources>
