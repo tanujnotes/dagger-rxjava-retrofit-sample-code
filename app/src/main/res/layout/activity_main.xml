@@ -109,6 +109,6 @@
     <include
         android:id="@+id/loading_view"
         layout="@layout/loading_layout"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
 </FrameLayout>

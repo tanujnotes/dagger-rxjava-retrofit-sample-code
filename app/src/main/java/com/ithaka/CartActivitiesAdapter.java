@@ -13,6 +13,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.ithaka.models.CartModel;
 
 import java.text.ParseException;
@@ -81,11 +83,9 @@ public class CartActivitiesAdapter extends RecyclerView.Adapter<CartActivitiesAd
 
         Glide.with(activity)
                 .load(activityList.get(position).getImageUrl())
-                .centerCrop()
-//                .apply(RequestOptions.bitmapTransform(new RoundedCorners(8)))
+                .transform(new CenterCrop(), new RoundedCorners(8))
                 .placeholder(R.drawable.ithaka_logo)
                 .error(R.drawable.ithaka_logo)
-//                .override(100, 200)
                 .into(holder.activityImage);
     }
 
