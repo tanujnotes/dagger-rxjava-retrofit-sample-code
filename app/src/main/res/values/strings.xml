@@ -10,4 +10,5 @@
     <string name="important_inclusions_and_exclusions">Important Inclusions and Exclusions:</string>
     <string name="change">Change</string>
     <string name="inr">₹ INR</string>
+    <string name="tap_to_retry">Tap to retry</string>
 </resources>

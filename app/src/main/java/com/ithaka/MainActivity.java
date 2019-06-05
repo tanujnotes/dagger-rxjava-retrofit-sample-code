@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.ithaka.models.CartModel;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     com.ithaka.NetworkService networkService;
 
+    private View loadingView;
     private TextView travellerCount;
     private CartActivitiesAdapter cartActivitiesAdapter;
     private List<CartModel.ActivityTransaction> activityTransactions = new ArrayList<>();
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         ((MyApp) getApplication()).getNetComponent().inject(this);
         setContentView(R.layout.activity_main);
 
+        loadingView = findViewById(R.id.loading_view);
         travellerCount = findViewById(R.id.traveller_count);
         cartActivitiesAdapter = new CartActivitiesAdapter(this, activityTransactions);
         RecyclerView activityRecyclerView = findViewById(R.id.activities_rv);
@@ -42,10 +45,19 @@ public class MainActivity extends AppCompatActivity {
         activityRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         activityRecyclerView.setAdapter(cartActivitiesAdapter);
 
-        getPlaylistItems();
+        loadingView.findViewById(R.id.tap_to_retry).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadingView.findViewById(R.id.tap_to_retry).setVisibility(View.GONE);
+                loadingView.findViewById(R.id.progress_bar).setVisibility(View.VISIBLE);
+                getActivities();
+            }
+        });
+
+        getActivities();
     }
 
-    private void getPlaylistItems() {
+    private void getActivities() {
         HashMap<String, Object> map = new HashMap<>();
         map.put("conversationId", "-LerU3oKU84KsC6xaGWi");
 
@@ -60,10 +72,13 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onError(Throwable e) {
                         Log.d("ERROR", e.getMessage());
+                        loadingView.findViewById(R.id.progress_bar).setVisibility(View.GONE);
+                        loadingView.findViewById(R.id.tap_to_retry).setVisibility(View.VISIBLE);
                     }
 
                     @Override
                     public void onNext(CartModel model) {
+                        loadingView.setVisibility(View.GONE);
                         travellerCount.setText(String.format("%s Adults, %s Child", model.getAdults(), model.getChild()));
                         activityTransactions.clear();
                         activityTransactions.addAll(model.getActivityTransactions());

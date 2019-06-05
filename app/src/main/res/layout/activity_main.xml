@@ -17,7 +17,6 @@
             android:id="@+id/traveller_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="2 Adults, 1 Child"
             android:textColor="#3c2f4b" />
 
         <TextView
@@ -30,7 +29,8 @@
             android:paddingEnd="16dp"
             android:paddingBottom="4dp"
             android:text="@string/change"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="12sp" />
 
         <Space
             android:layout_width="0dp"
@@ -86,5 +86,10 @@
             android:text="@string/total_payable_now"
             android:textColor="@color/white" />
     </LinearLayout>
+
+    <include
+        android:id="@+id/loading_view"
+        layout="@layout/loading_layout"
+        android:visibility="visible" />
 
 </FrameLayout>
