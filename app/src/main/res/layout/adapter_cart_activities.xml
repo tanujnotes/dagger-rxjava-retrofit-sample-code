@@ -11,8 +11,16 @@
         android:id="@+id/city_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/violet_rounded_square_backgroud"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp"
         android:text="Bangkok"
-        android:textAllCaps="true" />
+        android:textAllCaps="true"
+        android:textColor="@color/white" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/activity_card"
@@ -20,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:padding="16dp"
+        app:cardCornerRadius="4dp"
         app:cardElevation="2dp">
 
         <RelativeLayout
@@ -41,7 +50,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:text="Remove" />
+                android:drawableStart="@drawable/ic_delete_black_24dp"
+                android:text="Remove"
+                android:textColor="@color/default_gray"
+                android:textSize="12sp" />
 
             <View
                 android:id="@+id/card_divider"
@@ -58,22 +70,30 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/card_divider"
                 android:layout_alignParentEnd="true"
-                android:text="Change" />
+                android:background="@drawable/yellow_white_rounded_square_background"
+                android:paddingStart="16dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="4dp"
+                android:text="@string/change"
+                android:textColor="@color/yellow"
+                android:textSize="12sp" />
 
             <TextView
-                android:id="@+id/activity_color_text"
+                android:id="@+id/variant_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/card_divider"
                 android:layout_marginEnd="72dp"
                 android:text="Normal Ticket with transfer and dinner"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/adult_child_count_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/activity_color_text"
+                android:layout_below="@+id/variant_title"
                 android:layout_marginTop="8dp"
                 android:text="2 Adults (₹ 1900 each), 1 Child (₹ 900 each)"
                 android:textColor="#3c2f4b" />
@@ -84,13 +104,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/adult_child_count_info"
                 android:layout_marginTop="8dp"
-                android:text="[icon]Feb 23, 2019 at 5:00 pm"
+                android:drawableStart="@drawable/ic_date_16dp"
+                android:text="Feb 23, 2019 at 5:00 pm"
                 android:textColor="#3c2f4b" />
 
             <ImageView
                 android:id="@+id/activity_image"
                 android:layout_width="80dp"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:layout_below="@+id/date_and_time"
                 android:layout_marginTop="16dp"
                 android:contentDescription="@string/imageview"
@@ -102,22 +123,49 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/date_and_time"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="12dp"
                 android:layout_toEndOf="@+id/activity_image"
-                android:letterSpacing="0.01"
-                android:text="Important Inclusions and Exclusions : "
-                android:textColor="#3c2f4b" />
+                android:text="@string/important_inclusions_and_exclusions"
+                android:textColor="#3c2f4b"
+                android:textSize="12sp" />
+
+            <ListView
+                android:id="@+id/inclusion_list"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_below="@+id/important_inclusions"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:scrollbars="none"
+                android:layout_toEndOf="@+id/activity_image"
+                android:divider="@null"
+                android:dividerHeight="0dp" />
+
+            <ListView
+                android:id="@+id/exclusion_list"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_below="@+id/inclusion_list"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:scrollbars="none"
+                android:layout_toEndOf="@+id/activity_image"
+                android:divider="@null"
+                android:dividerHeight="0dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/important_inclusions"
                 android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
                 android:layout_toEndOf="@+id/activity_image"
-                android:letterSpacing="0.01"
-                android:lineSpacingExtra="2sp"
-                android:text="[icon] Lunch"
-                android:textColor="#3c2f4b" />
+                android:drawableStart="@drawable/ic_check_circle_black_24dp"
+                android:fontFamily="sans-serif-light"
+                android:text="Lunch"
+                android:textColor="#3c2f4b"
+                android:textSize="12sp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/read_more"

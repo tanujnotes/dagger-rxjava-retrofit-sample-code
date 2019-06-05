@@ -2,11 +2,17 @@ package com.ithaka;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.ithaka.models.CartModel;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -20,12 +26,21 @@ public class MainActivity extends AppCompatActivity {
     @Inject
     com.ithaka.NetworkService networkService;
 
+    private RecyclerView activityRecyclerView;
+    private CartActivitiesAdapter cartActivitiesAdapter;
+    private List<CartModel.ActivityTransaction> activityTransactions = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((com.ithaka.MyApp) getApplication()).getNetComponent().inject(this);
+        ((MyApp) getApplication()).getNetComponent().inject(this);
         setContentView(R.layout.activity_main);
+
+        cartActivitiesAdapter = new CartActivitiesAdapter(this, activityTransactions);
+        activityRecyclerView = findViewById(R.id.activities_rv);
+        activityRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        activityRecyclerView.setAdapter(cartActivitiesAdapter);
+
         getPlaylistItems();
     }
 
@@ -48,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onNext(CartModel model) {
-                        // You got the response model. Do whatever you want with it.
+                        activityTransactions.clear();
+                        activityTransactions.addAll(model.getActivityTransactions());
+                        cartActivitiesAdapter.notifyDataSetChanged();
                     }
                 });
     }

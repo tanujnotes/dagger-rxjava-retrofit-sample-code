@@ -6,4 +6,7 @@
     <string name="total_payable_now">Total Payable Now</string>
     <string name="imageview">ImageView</string>
     <string name="read_more">Read More</string>
+    <string name="activities">Activities</string>
+    <string name="important_inclusions_and_exclusions">Important Inclusions and Exclusions:</string>
+    <string name="change">Change</string>
 </resources>
