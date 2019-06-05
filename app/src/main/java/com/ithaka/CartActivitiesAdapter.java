@@ -46,7 +46,7 @@ public class CartActivitiesAdapter extends RecyclerView.Adapter<CartActivitiesAd
         holder.cityName.setText(activityList.get(position).getCity());
         holder.variantTitle.setText(activityList.get(position).getVariantTitle());
         holder.timing.setText(String.format("%s at %s", activityList.get(position).getDate(), activityList.get(position).getStartTime()));
-        holder.activityAmount.setText(String.format(Locale.getDefault(), "₹ %.2f", activityList.get(position).getAmount()));
+        holder.activityAmount.setText(String.format(Locale.getDefault(), "₹ %.0f", activityList.get(position).getAmount()));
 
         List<String> inclusionList = activityList.get(holder.getAdapterPosition()).getInclusions();
         ArrayAdapter inclusionAdapter = new ArrayAdapter<>(activity, R.layout.check_listview, inclusionList);

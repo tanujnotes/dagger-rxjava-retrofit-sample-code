@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onNext(CartModel model) {
                         loadingView.setVisibility(View.GONE);
-                        payableAmount.setText(String.format(Locale.getDefault(), "Total Payable Now: ₹ %.2f", model.getAmount()));
+                        payableAmount.setText(String.format(Locale.getDefault(), "Total Payable Now: ₹ %.0f", model.getAmount()));
                         travellerCount.setText(String.format("%s Adults, %s Child", model.getAdults(), model.getChild()));
                         activityTransactions.clear();
                         activityTransactions.addAll(model.getActivityTransactions());
