@@ -1,15 +1,15 @@
-### Ithaka
+## Ithaka
 
 A sample project for getting data from api and displaying it.
 
-# Major libraries used
+### Major libraries used
 
 Dagger, Retrofit, RxJava, Glide
 
-# Author
+### Author
 
 Tanuj Mishra
 
-# Contact
+### Contact
 
 https://twitter.com/thetanuj
