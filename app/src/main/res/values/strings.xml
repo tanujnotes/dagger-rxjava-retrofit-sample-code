@@ -13,4 +13,5 @@
     <string name="tap_to_retry">Tap to retry</string>
     <string name="pay_now">pay now</string>
     <string name="non_refundable">Non refundable</string>
+    <string name="remove">Remove</string>
 </resources>

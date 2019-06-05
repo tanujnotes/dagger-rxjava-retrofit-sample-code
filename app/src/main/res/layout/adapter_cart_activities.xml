@@ -38,13 +38,14 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
-            android:padding="16dp">
+            android:background="?attr/selectableItemBackground">
 
             <TextView
                 android:id="@+id/activity_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="72dp"
                 android:text="7 Island Tour from Krabi by Speedboat with James Bond Island"
                 android:textColor="#3c2f4b"
@@ -55,8 +56,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:drawableStart="@drawable/ic_delete_black_24dp"
-                android:text="Remove"
+                android:text="@string/remove"
                 android:textColor="@color/default_gray"
                 android:textSize="12sp" />
 
@@ -67,7 +70,7 @@
                 android:layout_below="@+id/activity_description"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:background="@color/brown_gray" />
+                android:background="@color/divider_gray" />
 
             <TextView
                 android:id="@+id/change_button"
@@ -75,6 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/card_divider"
                 android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/yellow_white_rounded_square_background"
                 android:paddingStart="16dp"
                 android:paddingTop="4dp"
@@ -89,6 +93,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/card_divider"
+                android:layout_marginStart="16dp"
                 android:layout_marginEnd="72dp"
                 android:text="Normal Ticket with transfer and dinner"
                 android:textColor="@color/colorPrimary"
@@ -99,6 +104,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/variant_title"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="sans-serif-light"
                 android:text="2 Adults (₹ 1900 each), 1 Child (₹ 900 each)"
@@ -109,6 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/adult_child_count_info"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:drawableStart="@drawable/ic_date_16dp"
                 android:fontFamily="sans-serif-light"
@@ -120,6 +127,7 @@
                 android:layout_width="80dp"
                 android:layout_height="120dp"
                 android:layout_below="@+id/date_and_time"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:contentDescription="@string/imageview"
                 android:src="@color/dark_gray" />
@@ -131,6 +139,7 @@
                 android:layout_below="@+id/date_and_time"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
                 android:layout_toEndOf="@+id/activity_image"
                 android:text="@string/important_inclusions_and_exclusions"
                 android:textColor="#3c2f4b"
@@ -142,6 +151,7 @@
                 android:layout_below="@+id/important_inclusions"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
                 android:layout_toEndOf="@+id/activity_image"
                 android:foreground="@drawable/transparent_to_white_gradient_bottom"
                 android:orientation="horizontal">
@@ -172,6 +182,7 @@
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/card_divider_2"
                 android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
                 android:text="@string/read_more"
                 android:textColor="@color/colorPrimary" />
 
@@ -181,14 +192,14 @@
                 android:layout_height="1dp"
                 android:layout_below="@+id/activity_image"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:background="@color/brown_gray" />
+                android:background="@color/divider_gray" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/card_divider_2"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <TextView
                     android:id="@+id/cancellation_details"
